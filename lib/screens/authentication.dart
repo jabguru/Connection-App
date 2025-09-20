@@ -21,6 +21,7 @@ class AuthenticationScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  VerticalSpacing(4.0),
                   LanguageSelector(),
                   Spacer(),
                   Text(
