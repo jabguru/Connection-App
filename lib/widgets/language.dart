@@ -64,65 +64,63 @@ class _LanguageSelectionModalState extends State<LanguageSelectionModal> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(40.0),
-            topRight: Radius.circular(40.0),
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(40.0),
+          topRight: Radius.circular(40.0),
+        ),
+        color: AppColors.white,
+      ),
+      height: MediaQuery.sizeOf(context).height * 0.6,
+      child: Column(
+        children: [
+          VerticalSpacing(12.0),
+          Assets.images.icons.line.svg(),
+          VerticalSpacing(22.0),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Select your preferred language',
+                  style: Theme.of(context).textTheme.labelLarge,
+                ),
+                GestureDetector(
+                  onTap: () => Navigator.pop(context),
+                  child: Assets.images.icons.close.svg(),
+                ),
+              ],
+            ),
           ),
-          color: AppColors.white,
-        ),
-        height: MediaQuery.sizeOf(context).height * 0.5,
-        child: Column(
-          children: [
-            VerticalSpacing(12.0),
-            Assets.images.icons.line.svg(),
-            VerticalSpacing(22.0),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Select your preferred language',
-                    style: Theme.of(context).textTheme.labelLarge,
-                  ),
-                  GestureDetector(
-                    onTap: () => Navigator.pop(context),
-                    child: Assets.images.icons.close.svg(),
-                  ),
-                ],
-              ),
+          VerticalSpacing(20.0),
+          Divider(
+            color: AppColors.primary.withValues(alpha: 0.1),
+            thickness: 1.0,
+          ),
+          VerticalSpacing(12.5),
+          Expanded(
+            child: ListView.separated(
+              padding: EdgeInsets.symmetric(horizontal: 16.0),
+              itemCount: Language.values.length,
+              itemBuilder: (context, index) {
+                Language language = Language.values[index];
+                bool isSelected = language == _selectedLanguage;
+                return ListSelector(
+                  text: language.name,
+                  isSelected: isSelected,
+                  onTap: () => setState(() {
+                    _selectedLanguage = language;
+                  }),
+                );
+              },
+              separatorBuilder: (context, index) =>
+                  Divider(color: AppColors.background, thickness: 1.0),
             ),
-            VerticalSpacing(20.0),
-            Divider(
-              color: AppColors.primary.withValues(alpha: 0.1),
-              thickness: 1.0,
-            ),
-            VerticalSpacing(12.5),
-            Expanded(
-              child: ListView.separated(
-                padding: EdgeInsets.symmetric(horizontal: 16.0),
-                itemCount: Language.values.length,
-                itemBuilder: (context, index) {
-                  Language language = Language.values[index];
-                  bool isSelected = language == _selectedLanguage;
-                  return ListSelector(
-                    text: language.name,
-                    isSelected: isSelected,
-                    onTap: () => setState(() {
-                      _selectedLanguage = language;
-                    }),
-                  );
-                },
-                separatorBuilder: (context, index) =>
-                    Divider(color: AppColors.background, thickness: 1.0),
-              ),
-            ),
-            VerticalSpacing(18.0),
-          ],
-        ),
+          ),
+          VerticalSpacing(48.0),
+        ],
       ),
     );
   }
