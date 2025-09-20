@@ -1,16 +1,23 @@
 # coding_task
 
-A new Flutter project.
+Coding Task
 
-## Getting Started
+## Setup Steps
+- Clone the repository to your local machine:
+  ```bash
+  git clone https://github.com/jabguru/Connection-App.git
+  ```
+- Open the project in your preferred IDE (e.g., VSCode, Android Studio).
+- Ensure you have Flutter installed and configured on your machine. Follow the official Flutter installation guide if you don't: [Flutter Installation](https://docs.flutter.dev/get-started/install)
+- Make sure to set up your development environment for either Android or iOS as needed.
+- Start your Android emulator or iOS simulator.
+- Run the app
 
-This project is a starting point for a Flutter application.
+## Development Environment
+- Flutter - 3.35.3
+- Dart - 3.9.2
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Time Take For Development
+- Approximately 2 hours
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
