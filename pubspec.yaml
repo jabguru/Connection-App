@@ -88,6 +88,8 @@ flutter:
       fonts:
         - asset: assets/fonts/Aeonik-Regular.ttf
           weight: 400
+        - asset: assets/fonts/Aeonik-Medium.ttf
+          weight: 500
         - asset: assets/fonts/Aeonik-Bold.ttf
           weight: 700
   #

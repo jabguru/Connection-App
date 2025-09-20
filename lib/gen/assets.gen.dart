@@ -47,8 +47,18 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/google.svg
   SvgGenImage get google => const SvgGenImage('assets/images/icons/google.svg');
 
+  /// File path: assets/images/icons/line.svg
+  SvgGenImage get line => const SvgGenImage('assets/images/icons/line.svg');
+
   /// List of all assets
-  List<SvgGenImage> get values => [apple, chevronDown, close, email, google];
+  List<SvgGenImage> get values => [
+    apple,
+    chevronDown,
+    close,
+    email,
+    google,
+    line,
+  ];
 }
 
 class Assets {

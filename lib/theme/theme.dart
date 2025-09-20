@@ -11,6 +11,18 @@ class AppTheme {
         color: AppColors.white,
         fontWeight: FontWeight.w400,
       ),
+      labelLarge: TextStyle(
+        fontSize: 15.0,
+        color: AppColors.text,
+        fontWeight: FontWeight.w500,
+        letterSpacing: 0.0,
+      ),
+      labelMedium: TextStyle(
+        fontSize: 15.0,
+        color: AppColors.text,
+        fontWeight: FontWeight.w400,
+        letterSpacing: 0.0,
+      ),
       bodyLarge: TextStyle(
         fontSize: 15.0,
         color: AppColors.white,
